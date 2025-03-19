@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <!-- Thank You Image -->
+    <ImageView
+        android:id="@+id/txtThankYou"
+        android:layout_width="322dp"
+        android:layout_height="216dp"
+        android:src="@drawable/gpay"
+        />
+
+    <!-- Payment Options -->
+    <RadioGroup
+        android:id="@+id/paymentOptionsGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp">
+
+        <RadioButton
+            android:id="@+id/rbUpi"
+            android:layout_width="257dp"
+            android:layout_height="wrap_content"
+            android:text="UPI"
+            android:drawableEnd="@drawable/payment"/>
+
+        <RadioButton
+            android:id="@+id/rbCreditCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Credit Card"
+            android:drawableEnd="@drawable/payment"/>
+
+        <RadioButton
+            android:id="@+id/rbPayPal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PayPal"
+            android:drawableEnd="@drawable/payment"/>
+    </RadioGroup>
+
+    <!-- Pay Now Button -->
+    <Button
+        android:id="@+id/btnPayNow"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Pay Now"
+        android:backgroundTint="@color/black"/>
+</LinearLayout>

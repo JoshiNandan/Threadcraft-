@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+
+    <ImageView
+        android:id="@+id/imageViewTshirt"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:background="@android:color/darker_gray"
+        android:scaleType="centerInside" />
+
+    <EditText
+        android:id="@+id/editTextCustomText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@android:drawable/editbox_background"
+        android:hint="Enter custom text..."
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/btnAddText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/black"
+        android:text="Add Text"
+        android:textColor="@color/white" />
+
+    <FrameLayout
+        android:id="@+id/customizationArea"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/tshirtPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/textViewCustomText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btnConfirmDesign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/yellow"
+        android:text="Confirm Design"
+        android:textColor="@color/black" />
+</LinearLayout>

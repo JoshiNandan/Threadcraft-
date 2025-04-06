@@ -32,7 +32,10 @@
         android:hint="Enter email..."
         android:padding="10dp"
         android:layout_marginTop="10dp"
-        android:background="@android:drawable/editbox_background"/>
+        android:background="@android:drawable/editbox_background"
+        android:focusableInTouchMode="true"
+        android:hint="Enter email..."
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/etPassword"

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_image"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:rotation="0"
+    android:visibility="visible">
 
 
     <TextView
@@ -19,30 +22,33 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="295dp"
         android:layout_height="200dp"
         android:layout_marginTop="20dp"
+        android:cropToPadding="true"
         android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/tvLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="244dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Already have an account?"
-        android:textColor="@android:color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/design_default_color_primary_variant"
         android:textSize="20dp" />
 
     <Button
-        android:id="@+id/btnSignup"
-        android:layout_width="wrap_content"
+        android:id="@+id/button"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#3D5AFE"
+        android:backgroundTint="#000000"
+        android:insetTop="20dp"
         android:text="SIGN UP"
-        android:textColor="@android:color/white"
-        android:textStyle="italic" />
-
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#E8E8E8"
+        android:textColorLink="#F3F3F3"
+        app:iconTint="#D0D0D0" />
 
 
 </LinearLayout>

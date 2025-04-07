@@ -24,7 +24,7 @@ public class MainProductActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_product);
 
         recyclerView = findViewById(R.id.recyclerViewProducts);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); // 2 columns for grid layout
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); // 1 columns for grid layout
 
         productList = new ArrayList<>();
         productList.add(new Product("Red T-Shirt", R.drawable.tshirt_red, "Comfortable red cotton T-shirt", "₹399"));

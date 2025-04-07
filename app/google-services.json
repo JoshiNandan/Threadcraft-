@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "259873744378",
+    "project_id": "mylogin-dacfa",
+    "storage_bucket": "mylogin-dacfa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259873744378:android:401a89b745a5cb37acf043",
+        "android_client_info": {
+          "package_name": "com.example.mylogin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnFQhVp7MceufSJh3jbXRhEb5j_NYDgQ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

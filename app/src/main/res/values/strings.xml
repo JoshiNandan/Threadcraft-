@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Mylogin</string>
+    <string name="app_name" translatable="false">ThreadCraft</string>
+    <string-array name="font_styles">
+        <item>Default</item>
+        <item>Bold</item>
+        <item>Italic</item>
+        <item>Bold Italic</item>
+    </string-array>
 </resources>
+

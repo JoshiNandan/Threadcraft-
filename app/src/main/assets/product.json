@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Red T-Shirt",
+    "image": "tshirt_red",
+    "description": "Comfortable red cotton T-shirt",
+    "price": "₹399"
+  },
+  {
+    "name": "Blue T-Shirt",
+    "image": "tshirt_blue",
+    "description": "Stylish blue T-shirt",
+    "price": "₹499"
+  },
+  {
+    "name": "Black T-Shirt",
+    "image": "tshirt_black",
+    "description": "Classic black T-shirt",
+    "price": "₹599"
+  },
+  {
+    "name": "White T-Shirt",
+    "image": "tshirt_white",
+    "description": "Simple white T-shirt",
+    "price": "₹499"
+  }
+]

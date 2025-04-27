@@ -3,14 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="#4D4C4C">
 
-    <!-- Display Customized T-shirt -->
     <ImageView
         android:id="@+id/imgTshirt"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/tshirt_red" />
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/darker_gray"
+        android:scaleType="centerInside" />
 
     <TextView
         android:id="@+id/txtCustomization"
@@ -20,7 +23,6 @@
         android:textSize="18sp"
         android:paddingTop="8dp" />
 
-    <!-- User Address Inputs -->
     <EditText
         android:id="@+id/edtName"
         android:layout_width="match_parent"
@@ -52,8 +54,14 @@
         android:hint="Enter Postal Code"
         android:inputType="number"
         android:padding="8dp" />
+    <EditText
+        android:id="@+id/edtPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your MobileNumber"
+        android:inputType="number"
+        android:padding="8dp" />
 
-    <!-- Checkout Button -->
     <Button
         android:id="@+id/btnCheckout"
         android:layout_width="match_parent"

@@ -3,12 +3,14 @@ package com.example.mylogin;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class CartCheckoutActivity extends AppCompatActivity {
 
@@ -16,6 +18,8 @@ public class CartCheckoutActivity extends AppCompatActivity {
     private Button btnCheckout;
     private ImageView imgTshirt;
     private TextView txtCustomization;
+
+    private DatabaseReference rootDatabaseReference;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -33,42 +37,48 @@ public class CartCheckoutActivity extends AppCompatActivity {
         imgTshirt = findViewById(R.id.imgTshirt);
         txtCustomization = findViewById(R.id.txtCustomization);
 
+        rootDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Orders");
+
         // Retrieve data passed from CustomizationActivity
         Intent intent = getIntent();
-        int productImage = intent.getIntExtra("productImage", R.drawable.tshirt_red);  // Default image if not passed
+        int productImage = intent.getIntExtra("productImage", R.drawable.tshirt_red);
         String customText = intent.getStringExtra("customText");
 
-        // Set the T-shirt image and custom text
         imgTshirt.setImageResource(productImage);
         txtCustomization.setText(customText);
 
-        // Handle checkout button click
         btnCheckout.setOnClickListener(v -> {
-            // Get the user's address input
             String name = edtName.getText().toString();
             String address = edtAddress.getText().toString();
             String city = edtCity.getText().toString();
             String postalCode = edtPostalCode.getText().toString();
-            String PhoneNumber = edtPhoneNumber.getText().toString();
+            String phoneNumber = edtPhoneNumber.getText().toString();
+            String customDesign = txtCustomization.getText().toString();
 
-
-            if (!PhoneNumber.matches("\\d{10}")) {
-                // If not 10 digits, show a validation message
+            if (!phoneNumber.matches("\\d{10}")) {
                 edtPhoneNumber.setError("Please enter a valid 10-digit mobile number.");
                 return;
             }
 
-            // Check for valid input (basic validation)
-            if (name.isEmpty() || address.isEmpty() || city.isEmpty() || postalCode.isEmpty() || PhoneNumber.isEmpty()) {
-                // Show error message (you can use Toast or a Snackbar)
+            if (name.isEmpty() || address.isEmpty() || city.isEmpty() || postalCode.isEmpty() || phoneNumber.isEmpty()) {
+                Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
                 return;
             }
 
+            // Create an Order object
+            Order order = new Order(name, address, city, postalCode, phoneNumber, customDesign, productImage);
 
-            // Proceed to the Thank You screen
-            Intent thankYouIntent = new Intent(CartCheckoutActivity.this, ThankYouActivity.class);
-            thankYouIntent.putExtra("CUSTOMIZATION_TEXT", txtCustomization.getText().toString());
-            startActivity(thankYouIntent);
+            // Save order with a unique ID
+            DatabaseReference newOrderRef = rootDatabaseReference.push();
+            newOrderRef.setValue(order)
+                    .addOnSuccessListener(unused -> {
+                        Toast.makeText(this, "Order placed successfully", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(CartCheckoutActivity.this, ThankYouActivity.class));
+                        finish();
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(this, "Failed to place order: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    });
         });
     }
 }

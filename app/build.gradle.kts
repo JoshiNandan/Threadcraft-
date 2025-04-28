@@ -34,7 +34,8 @@ android {
 }
 
 dependencies {
-
+    implementation("com.google.firebase:firebase-core:17.2.0")
+    implementation("com.google.firebase:firebase-database:19.2.0")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -43,6 +44,8 @@ dependencies {
     implementation(libs.credentials)
     implementation(libs.credentials.play.services.auth)
     implementation(libs.googleid)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.database)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
